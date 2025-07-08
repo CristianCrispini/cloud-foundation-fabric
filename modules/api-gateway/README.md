@@ -88,14 +88,15 @@ module "gateway" {
 
 | name | description | sensitive |
 |---|---|:---:|
-| [api](outputs.tf#L17) | API. |  |
-| [api_config](outputs.tf#L28) | API configs. |  |
-| [api_config_id](outputs.tf#L39) | The identifiers of the API configs. |  |
-| [api_id](outputs.tf#L50) | API identifier. |  |
-| [default_hostname](outputs.tf#L61) | The default host names of the API gateway. |  |
-| [gateway](outputs.tf#L72) | API gateways. |  |
-| [gateway_id](outputs.tf#L83) | The identifiers of the API gateways. |  |
-| [service_account](outputs.tf#L94) | Service account resource. |  |
-| [service_account_email](outputs.tf#L99) | The service account for creating API configs. |  |
-| [service_account_iam_email](outputs.tf#L104) | The service account for creating API configs. |  |
+| [api](outputs.tf#L17) | The full `google_api_gateway_api` resource object. This can be used to access all attributes of the created API. |  |
+| [api_config](outputs.tf#L28) | The full `google_api_gateway_api_config` resource object, representing a specific version of the API's configuration. |  |
+| [api_config_id](outputs.tf#L39) | The short, unique identifier for the created API config (e.g., 'my-api-config-v1'). |  |
+| [api_id](outputs.tf#L50) | The short, unique identifier for the created API (e.g., 'my-gateway-api'). |  |
+| [default_hostname](outputs.tf#L72) | The default, publicly accessible URL where the deployed API gateway can be invoked. |  |
+| [gateway](outputs.tf#L83) | The full `google_api_gateway_gateway` resource object. This represents the gateway instance itself. |  |
+| [gateway_id](outputs.tf#L94) | The short, unique identifier for the created API Gateway instance (e.g., 'my-gateway'). |  |
+| [managed_service](outputs.tf#L61) | The unique, globally-recognized name for the API within Google Cloud's Service Infrastructure. It's used for API key restrictions, monitoring, and billing. |  |
+| [service_account](outputs.tf#L105) | The full `google_service_account` resource object, if one was created by this module. Will be `null` if an existing service account was used. |  |
+| [service_account_email](outputs.tf#L110) | The email address of the service account associated with the API Gateway. |  |
+| [service_account_iam_email](outputs.tf#L115) | The service account email formatted for use in IAM policies (e.g., 'serviceAccount:sa@project.iam.gserviceaccount.com'). |  |
 <!-- END TFDOC -->
