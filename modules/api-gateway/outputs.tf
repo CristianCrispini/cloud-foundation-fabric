@@ -58,9 +58,9 @@ output "api_id" {
   ]
 }
 
-output "api_id" {
+output "managed_service" {
   description = "The unique, globally-recognized name for the API within Google Cloud's Service Infrastructure. It's used for API key restrictions, monitoring, and billing."
-  value       = google_api_gateway_api.api.amanaged_service
+  value       = google_api_gateway_api.api.managed_service
   depends_on = [
     google_project_service.service,
     google_api_gateway_api_iam_binding.api_iam_bindings,
